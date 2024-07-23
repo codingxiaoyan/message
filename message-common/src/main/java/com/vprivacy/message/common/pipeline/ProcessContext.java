@@ -1,0 +1,41 @@
+package com.vprivacy.message.common.pipeline;
+
+import com.vprivacy.message.common.vo.BasicResultVO;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+
+/**
+ * @Description: new java files header..
+ * @Author: yxs
+ * @Date: 2024/7/23 18:14
+ */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Accessors(chain = true)
+public class ProcessContext<T extends ProcessModel> implements Serializable {
+
+    /**
+     * 标识责任链的code
+     */
+    private String code;
+    /**
+     * 存储责任链上下文数据的模型
+     */
+    private T processModel;
+    /**
+     * 责任链中断的标识
+     */
+    private Boolean needBreak;
+    /**
+     * 流程处理的结果
+     */
+    private BasicResultVO response;
+
+}
