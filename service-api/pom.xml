@@ -9,7 +9,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>message-common</artifactId>
+    <artifactId>message-service-api</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -18,11 +18,9 @@
     </properties>
 
     <dependencies>
-        <!--        lombok-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <groupId>com.vprivacy.message</groupId>
+            <artifactId>message-common</artifactId>
         </dependency>
     </dependencies>
 

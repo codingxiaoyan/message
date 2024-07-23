@@ -3,23 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.vprivacy.message</groupId>
-    <artifactId>vprivacy-message</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <modules>
         <module>message-common</module>
         <module>message-web</module>
+        <module>service-api</module>
+        <module>service-api-impl</module>
+        <module>message-support</module>
     </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.6</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.vprivacy.message</groupId>
+    <artifactId>vprivacy-message</artifactId>
+    <version>${revision}</version>
+    <name>message</name>
+    <url>https://github.com/ZhongFuCheng3y/austin</url>
 
     <properties>
         <!--项目版本-->
         <revision>0.0.1-SNAPSHOT</revision>
 
         <!--构建配置-->
-        <java.version>1.8</java.version>
-        <target.java.version>1.8</target.java.version>
+        <java.version>11</java.version>
+        <target.java.version>11</target.java.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,5 +67,44 @@
         <spring-boot-configuration-processor.version>2.5.6</spring-boot-configuration-processor.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vprivacy.message</groupId>
+                <artifactId>message-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vprivacy.message</groupId>
+                <artifactId>message-service-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vprivacy.message</groupId>
+                <artifactId>message-service-api-impl</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vprivacy.message</groupId>
+                <artifactId>message-support</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vprivacy.message</groupId>
+                <artifactId>message-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+
+            <!--注解打印日志-->
+            <dependency>
+                <groupId>cn.monitor4all</groupId>
+                <artifactId>log-record-starter</artifactId>
+                <version>${log-record-starter.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
 
 </project>

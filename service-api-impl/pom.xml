@@ -9,20 +9,20 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>message-common</artifactId>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <artifactId>message-service-api-impl</artifactId>
 
     <dependencies>
-        <!--        lombok-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <groupId>com.vprivacy.message</groupId>
+            <artifactId>message-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vprivacy.message</groupId>
+            <artifactId>message-service-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vprivacy.message</groupId>
+            <artifactId>message-support</artifactId>
         </dependency>
     </dependencies>
 
