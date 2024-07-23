@@ -1,4 +1,4 @@
-package com.vprivacy.message.api;
+package com.vprivacy.message.common.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +23,7 @@ public class SendRequest {
     /**
      * 执行业务类型
      *
-     * @see com.java3y.austin.service.api.enums.BusinessCode
+     * @see com.vprivacy.message.common.enums.BusinessCode
      * send:发送消息
      * recall:撤回消息
      */
@@ -35,12 +35,11 @@ public class SendRequest {
      */
     private Long messageTemplateId;
 
-
     /**
      * 消息相关的参数
      * 当业务类型为"send"，必传
      */
-//    private MessageParam messageParam;
+    private MessageParam messageParam;
 
     /**
      * 需要撤回的消息messageIds (可根据发送接口返回的消息messageId进行撤回)

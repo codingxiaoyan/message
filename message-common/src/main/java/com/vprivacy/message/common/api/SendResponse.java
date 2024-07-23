@@ -1,5 +1,6 @@
-package com.vprivacy.message.api;
+package com.vprivacy.message.common.api;
 
+import com.vprivacy.message.common.domain.SimpleTaskInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,6 @@ public class SendResponse {
     /**
      * 实际发送任务列表
      */
-//    private List<SimpleTaskInfo> data;
+    private List<SimpleTaskInfo> data;
 
 }
